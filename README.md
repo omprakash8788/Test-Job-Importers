@@ -1,6 +1,7 @@
-## 1- Folder structre of client and server.
+## 1- Folder Structure of Client and Server
 
-job-importer/                    ← root of the repository
+```
+Importer/                    ← root of the repository
 │
 ├── /client/                           ← Next.js Admin UI
 │   ├── components/                    ← UI components (ImportTable)
@@ -37,34 +38,54 @@ job-importer/                    ← root of the repository
 ├── README.md                          ← Setup instructions, usage, assumptions
 │
 └── .gitignore                         ← Node, Next.js, env, log files, etc.
-
+```
 
 ## 2- Setup Environment Variables
-/server/.env
+
+Create a `.env` file inside `/server/`:
+
+```
 PORT=5000
 MONGODB_URI=mongodb://*******************/job_importer
 REDIS_URL=redis://localhost:6379
+```
 
+## 3- How to Run Server and Client Locally
 
-##  How to Run Server and Client Locally
-1. Start the Backend Server
+### Start the Backend Server
+
+```bash
 cd server
 npm run dev 
+```
 
-* Start Backend Worker and Scheduler
+### Start Backend Worker and Scheduler
+
+```bash
 npm run worker      # Processes job queue
 npm run scheduler   # Triggers fetch every hour
+```
 
-## Note - To test manually, you can also trigger a fetch:
+**Note:** To test manually, you can also trigger a fetch:
+
+```bash
 npm run fetch
+```
 
-Recommended: Run dev, worker, and scheduler in separate terminal tabs
+_Recommended: Run dev, worker, and scheduler in separate terminal tabs_
 
+### Start the Frontend Client
 
-## 2. Start the Frontend Client
-
+```bash
 cd ../client
-npm run dev    
+npm install
+npm run dev 
+```
 
-
-
+> ⚠️ **Important Note**  
+> This project is currently running the backend (`/server`) **locally only**.  
+> The Vercel frontend at [https://job-importer.vercel.app/](https://job-importer.vercel.app/) will **not load any data** unless your local backend server is running at `http://localhost:5000`.
+>
+> 
+### Final Output 
+![image](https://github.com/user-attachments/assets/d3262ecf-9958-4d6a-b490-75283078024f)
