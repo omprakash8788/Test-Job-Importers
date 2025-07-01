@@ -1,0 +1,25 @@
+# Node modules
+**/node_modules
+
+# Logs
+*.log
+logs
+npm-debug.log*
+
+# dotenv
+**/.env
+
+# OS files
+.DS_Store
+
+# Next.js build
+.next/
+out/
+
+# Dependency lock
+package-lock.json
+
+# Optional:
+.vscode/
+.env.local
+coverage/
