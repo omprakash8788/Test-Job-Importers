@@ -1,6 +1,6 @@
 ## 1- Folder structre of client and server.
 
-artha-job-importer/                    ← root of the repository
+job-importer/                    ← root of the repository
 │
 ├── /client/                           ← Next.js Admin UI
 │   ├── components/                    ← UI components (ImportTable)
